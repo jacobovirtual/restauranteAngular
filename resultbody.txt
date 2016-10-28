@@ -1,0 +1,207 @@
+<pre class='xdebug-var-dump' dir='ltr'>
+    <b>object</b>(
+    <i>Slim\Http\Request</i>)[
+    <i>44</i>]
+    <i>protected</i> 'env'
+    <font color='#888a85'>=&gt;</font>
+    <b>object</b>(
+    <i>Slim\Environment</i>)[
+    <i>38</i>]
+    <i>protected</i> 'properties'
+    <font color='#888a85'>=&gt;</font>
+    <b>array</b>
+    <i>(size=23)</i>
+          'REQUEST_METHOD'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'POST'</font>
+    <i>(length=4)</i>
+          'REMOTE_ADDR'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'127.0.0.1'</font>
+    <i>(length=9)</i>
+          'SCRIPT_NAME'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'/restaurantes-api.php'</font>
+    <i>(length=21)</i>
+          'PATH_INFO'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'/restaurantes'</font>
+    <i>(length=13)</i>
+          'QUERY_STRING'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>''</font>
+    <i>(length=0)</i>
+          'SERVER_NAME'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'slim.mini'</font>
+    <i>(length=9)</i>
+          'SERVER_PORT'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'80'</font>
+    <i>(length=2)</i>
+          'HTTP_HOST'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'slim.mini'</font>
+    <i>(length=9)</i>
+          'HTTP_CONNECTION'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'keep-alive'</font>
+    <i>(length=10)</i>
+          'CONTENT_LENGTH'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'192'</font>
+    <i>(length=3)</i>
+          'HTTP_CACHE_CONTROL'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'no-cache'</font>
+    <i>(length=8)</i>
+          'HTTP_ORIGIN'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'</font>
+    <i>(length=51)</i>
+          'CONTENT_TYPE'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'application/x-www-form-urlencoded'</font>
+    <i>(length=33)</i>
+          'HTTP_USER_AGENT'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36'</font>
+    <i>(length=105)</i>
+          'HTTP_POSTMAN_TOKEN'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'ccb37a40-19dc-7171-c60c-b929c3d08f5f'</font>
+    <i>(length=36)</i>
+          'HTTP_ACCEPT'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'*/*'</font>
+    <i>(length=3)</i>
+          'HTTP_ACCEPT_ENCODING'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'gzip, deflate'</font>
+    <i>(length=13)</i>
+          'HTTP_ACCEPT_LANGUAGE'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'es-ES,es;q=0.8,en;q=0.6'</font>
+    <i>(length=23)</i>
+          'slim.url_scheme'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'http'</font>
+    <i>(length=4)</i>
+          'slim.input'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'json=%7B%22id%22%3A%225%22%2C%22nombre%22%3A%22paquillo2%22%2C%22direccion%22%3A%22calle+adua%22%2C%22descripcion%22%3A%22un+quinto%22%2C%22imagen%22%3A%22%22%2C%22precio%22%3A%2227%2C34%22%7D'</font>
+    <i>(length=192)</i>
+          'slim.errors'
+    <font color='#888a85'>=&gt;</font>
+    <b>resource</b>(
+    <i>5</i>
+    <font color='#2e3436'>,</font>
+    <i>stream</i>)
+          'slim.request.form_hash'
+    <font color='#888a85'>=&gt;</font>
+    <b>array</b>
+    <i>(size=1)</i>
+              ...
+          'slim.flash'
+    <font color='#888a85'>=&gt;</font>
+    <b>object</b>(
+    <i>Slim\Middleware\Flash</i>)[
+    <i>19</i>]
+              ...
+    <i>public</i> 'headers'
+    <font color='#888a85'>=&gt;</font>
+    <b>object</b>(
+    <i>Slim\Http\Headers</i>)[
+    <i>45</i>]
+    <i>protected</i> 'data'
+    <font color='#888a85'>=&gt;</font>
+    <b>array</b>
+    <i>(size=11)</i>
+          'Host'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'slim.mini'</font>
+    <i>(length=9)</i>
+          'Connection'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'keep-alive'</font>
+    <i>(length=10)</i>
+          'Content-Length'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'192'</font>
+    <i>(length=3)</i>
+          'Cache-Control'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'no-cache'</font>
+    <i>(length=8)</i>
+          'Origin'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'</font>
+    <i>(length=51)</i>
+          'Content-Type'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'application/x-www-form-urlencoded'</font>
+    <i>(length=33)</i>
+          'User-Agent'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36'</font>
+    <i>(length=105)</i>
+          'Postman-Token'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'ccb37a40-19dc-7171-c60c-b929c3d08f5f'</font>
+    <i>(length=36)</i>
+          'Accept'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'*/*'</font>
+    <i>(length=3)</i>
+          'Accept-Encoding'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'gzip, deflate'</font>
+    <i>(length=13)</i>
+          'Accept-Language'
+    <font color='#888a85'>=&gt;</font>
+    <small>string</small>
+    <font color='#cc0000'>'es-ES,es;q=0.8,en;q=0.6'</font>
+    <i>(length=23)</i>
+    <i>public</i> 'cookies'
+    <font color='#888a85'>=&gt;</font>
+    <b>object</b>(
+    <i>Slim\Helper\Set</i>)[
+    <i>47</i>]
+    <i>protected</i> 'data'
+    <font color='#888a85'>=&gt;</font>
+    <b>array</b>
+    <i>(size=0)</i>
+    <i>
+        <font color='#888a85'>empty</font>
+    </i>
+</pre>{"status":"success","message":" Sin erroresdata good{\"id\":\"5\",\"nombre\":\"paquillo2\",\"direccion\":\"calle adua\",\"descripcion\":\"un quinto\",\"imagen\":\"\",\"precio\":\"27,34\"}"}

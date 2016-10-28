@@ -1,0 +1,30 @@
+
+  <h2>ADD Restaurante</h2>
+<form #formRestaurante="ngForm" (ngSubmit)="onSubmit()">
+  <label>Nombre:</label>
+  <p>
+    <input type="text" #nombre="ngForm" ngControl="nombre" [(ngModel)]="restaurante.nombre" required/>
+    <span *ngIf="!nombre.valid">Rellena este campo</span>
+  </p>
+  <label>Direccion:</label>
+  <p>
+    <input type="text" #direccion="ngForm" ngControl="direccion" [(ngModel)]="restaurante.direccion" />
+  </p>
+  <label>Descripcion:</label>
+  <p>
+    <input type="textarea" #descripcion="ngForm" ngControl="descripcion" [(ngModel)]="restaurante.descripcion" />
+  </p>
+  <label>Precio:</label>
+  <p>
+    <select (change)="callPrecio(precio.value)" #precio>
+      <option value="bajo" [attr.selected]="restaurante.precio === 'bajo' ? 'selected' : null" >Bajo</option>
+      <option value="medio" [attr.selected]="restaurante.precio === 'medio' ? 'selected' : null">Medio</option>
+      <option value="alto" [attr.selected]="restaurante.precio === 'alto' ? 'selected' : null">Alto</option>
+    </select>
+  </p>
+  <label>Imagen:</label>
+  <p>
+    <input type="file" placeholder="Subir imagen..." (change)="fileChangeEvent($event)" />
+  </p>
+  <input type="submit" value="Editar restaurante" class="btn btn-submit" [disabled]="!formRestaurante.form.valid" />
+</form>
