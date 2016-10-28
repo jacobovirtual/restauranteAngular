@@ -1,0 +1,2 @@
+Versión inicial de la practica 
+angular 2beta
