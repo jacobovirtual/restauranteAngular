@@ -4,7 +4,7 @@
   <li class="loading">
     <img src="/assets/images/loading.gif" />
   </li>
-  <li *ngFor="#restaurante of restaurantes" class="restaurante-item">
+  <li *ngFor="let restaurante of restaurantes" class="restaurante-item">
     <div class="image">
       <img src="http://slim.mini/uploads/{{restaurante.imagen}}" *ngIf="restaurante.imagen && restaurante.imagen !== 'null'" />
 
@@ -13,8 +13,8 @@
         <h4> {{restaurante.nombre}} </h4>
         <p> {{restaurante.direccion}} </p>
         <p >
-          <a [routerLink]="['Restaurante', {id: restaurante.id}]" class="btn btn-ver">Ver</a>
-          <a [routerLink]="['EditarRestaurante', {id: restaurante.id}]" class="btn btn-editar">Editar</a>
+          <a [routerLink]="['/restaurante', restaurante.id]" class="btn btn-ver">Ver</a>
+          <a [routerLink]="['EditarRestaurante', restaurante.id]" class="btn btn-editar">Editar</a>
           <a (click)="onDeleteConfirm(restaurante.id)" class="btn btn-eliminar">Eliminar</a>
         </p>
         <div class="seguro" *ngIf="confirmado === restaurante.id">

@@ -1,6 +1,6 @@
 // Importar el núcleo de Angular
-import {Component, OnInit} from 'angular2/core';
-import {Router,RouteParams} from 'angular2/router';
+import {Component, OnInit} from '@angular/core';
+import {Router,RouteParams} from 'angul@angularar2/router-deprecated';
 import {RestauranteService} from '../services/restaurante.service';
 import {Restaurante} from '../model/restaurante';
 
