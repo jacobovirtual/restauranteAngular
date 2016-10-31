@@ -10,54 +10,57 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 // Importar el núcleo de Angular
 var core_1 = require('@angular/core');
-var router_deprecated_1 = require('@angular/router-deprecated');
+var router_1 = require('@angular/router');
 var restaurante_service_1 = require('../services/restaurante.service');
 var restaurante_1 = require('../model/restaurante');
 // Decorador component, indicamos en que etiqueta se va a cargar la plantilla
 var RestauranteEditComponent = (function () {
-    function RestauranteEditComponent(_restauranteService, _routeParams, _router) {
+    function RestauranteEditComponent(_restauranteService, _route, _router) {
         this._restauranteService = _restauranteService;
-        this._routeParams = _routeParams;
+        this._route = _route;
         this._router = _router;
         this.titulo = "Restaurante add";
     }
     RestauranteEditComponent.prototype.onSubmit = function () {
         var _this = this;
-        console.log(this.restaurante);
-        var id = this._routeParams.get("id");
-        this._restauranteService.editRestaurante(id, this.restaurante).subscribe(function (response) {
-            _this.status = response.status;
-            if (_this.status !== "success") {
-                alert(response.message);
-            }
-        }, function (error) {
-            _this.errorMessage = error;
-            if (_this.errorMessage !== null) {
-                alert(_this.errorMessage);
-            }
+        this._route.params.forEach(function (params) {
+            var id = params["id"];
+            _this._restauranteService.editRestaurante(id, _this.restaurante).subscribe(function (response) {
+                _this.status = response.status;
+                if (_this.status !== "success") {
+                    alert(response.message);
+                }
+            }, function (error) {
+                _this.errorMessage = error;
+                if (_this.errorMessage !== null) {
+                    alert(_this.errorMessage);
+                }
+            });
         });
-        this._router.navigate(['Home']);
+        this._router.navigate(['/']);
     };
     RestauranteEditComponent.prototype.ngOnInit = function () {
-        this.restaurante = new restaurante_1.Restaurante(parseInt(this._routeParams.get("id")), this._routeParams.get("nombre"), this._routeParams.get("direccion"), this._routeParams.get("descripcion"), this._routeParams.get("imagen"), this._routeParams.get("precio"));
+        this.restaurante = new restaurante_1.Restaurante(0, "", "", "", "null", "bajo");
         this.getRestaurante();
     };
     RestauranteEditComponent.prototype.getRestaurante = function () {
         var _this = this;
-        var id = this._routeParams.get("id");
-        this._restauranteService.getRestaurante(id).subscribe(function (response) {
-            _this.restaurante = response.data;
-            _this.status = response.status;
-            if (_this.status !== "success") {
-                alert("web no encontrada");
-                _this._router.navigate(['Home']);
-            }
-        }, function (error) {
-            _this.errorMessage = error;
-            if (_this.errorMessage !== null) {
-                console.log(_this.errorMessage);
-                alert("Error en la peticion");
-            }
+        this._route.params.forEach(function (params) {
+            var id = params["id"];
+            _this._restauranteService.getRestaurante(id).subscribe(function (response) {
+                _this.restaurante = response.data;
+                _this.status = response.status;
+                if (_this.status !== "success") {
+                    alert("web no encontrada");
+                    _this._router.navigate(['/']);
+                }
+            }, function (error) {
+                _this.errorMessage = error;
+                if (_this.errorMessage !== null) {
+                    console.log(_this.errorMessage);
+                    alert("Error en la peticion");
+                }
+            });
         });
     };
     RestauranteEditComponent.prototype.callPrecio = function (value) {
@@ -101,10 +104,9 @@ var RestauranteEditComponent = (function () {
             templateUrl: "/app/view/restaurante-edit.html",
             providers: [restaurante_service_1.RestauranteService]
         }), 
-        __metadata('design:paramtypes', [restaurante_service_1.RestauranteService, (typeof (_a = typeof router_deprecated_1.RouteParams !== 'undefined' && router_deprecated_1.RouteParams) === 'function' && _a) || Object, (typeof (_b = typeof router_deprecated_1.Router !== 'undefined' && router_deprecated_1.Router) === 'function' && _b) || Object])
+        __metadata('design:paramtypes', [restaurante_service_1.RestauranteService, router_1.ActivatedRoute, router_1.Router])
     ], RestauranteEditComponent);
     return RestauranteEditComponent;
-    var _a, _b;
 }());
 exports.RestauranteEditComponent = RestauranteEditComponent;
 //# sourceMappingURL=restaurante-edit.component.js.map

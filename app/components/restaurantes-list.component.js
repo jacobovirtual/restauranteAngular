@@ -10,11 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 // Importar el núcleo de Angular
 var core_1 = require('@angular/core');
-var router_deprecated_1 = require('@angular/router-deprecated');
+var router_1 = require('@angular/router');
 var restaurante_service_1 = require('../services/restaurante.service');
 // Decorador component, indicamos en que etiqueta se va a cargar la plantilla
 var RestaurantesListComponent = (function () {
-    function RestaurantesListComponent(_restauranteService) {
+    function RestaurantesListComponent(_route, _router, _restauranteService) {
+        this._route = _route;
+        this._router = _router;
         this._restauranteService = _restauranteService;
         this.titulo = "Listado de restaurantes";
     }
@@ -71,10 +73,9 @@ var RestaurantesListComponent = (function () {
         core_1.Component({
             selector: 'restaurantes-list',
             templateUrl: "/app/view/restaurantes-list.html",
-            directives: [router_deprecated_1.ROUTER_DIRECTIVES],
             providers: [restaurante_service_1.RestauranteService]
         }), 
-        __metadata('design:paramtypes', [restaurante_service_1.RestauranteService])
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router, restaurante_service_1.RestauranteService])
     ], RestaurantesListComponent);
     return RestaurantesListComponent;
 }());

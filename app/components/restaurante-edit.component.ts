@@ -1,6 +1,7 @@
 // Importar el núcleo de Angular
 import {Component, OnInit} from '@angular/core';
-import {Router,RouteParams} from '@angular/router-deprecated';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+
 import {RestauranteService} from '../services/restaurante.service';
 import {Restaurante} from '../model/restaurante';
 
@@ -18,58 +19,54 @@ export class RestauranteEditComponent implements OnInit{
   public errorMessage: string;
   public status: string;
   public filesToUpload: Array<File>;
+  public resultUpload;
 
   constructor(
     private _restauranteService: RestauranteService,
-    private _routeParams: RouteParams,
-    private _router: Router
+    private _route: ActivatedRoute,
+    private _router: Router,
   ){}
 
   onSubmit(){
-    console.log(this.restaurante);
-    let id = this._routeParams.get("id");
-    this._restauranteService.editRestaurante(id, this.restaurante).subscribe(
-      response => {
-        this.status = response.status;
-        if (this.status !== "success") {
-          alert(response.message);
+    this._route.params.forEach((params: Params) => {
+      let id = params["id"];
+      this._restauranteService.editRestaurante(id, this.restaurante).subscribe(
+        response => {
+          this.status = response.status;
+          if (this.status !== "success") {
+            alert(response.message);
+          }
+        },
+        error => {
+          this.errorMessage = <any>error;
+          if (this.errorMessage !== null) {
+            alert(this.errorMessage);
+          }
         }
-      },
-      error => {
-        this.errorMessage = <any>error;
-        if (this.errorMessage !== null) {
-          alert(this.errorMessage);
-        }
-      }
-    );
-    this._router.navigate(['Home']);
+      );
+    });
+    this._router.navigate(['/']);
   }
 
   ngOnInit(){
-    this.restaurante = new Restaurante(
-      parseInt(this._routeParams.get("id")),
-      this._routeParams.get("nombre"),
-      this._routeParams.get("direccion"),
-      this._routeParams.get("descripcion"),
-      this._routeParams.get("imagen"),
-      this._routeParams.get("precio")
-    );
+    this.restaurante = new Restaurante(0,"","","","null","bajo");
 
     this.getRestaurante();
 
   }
 
   getRestaurante(){
-    let id = this._routeParams.get("id");
+    this._route.params.forEach((params: Params) => {
+      let id = params["id"];
 
-    this._restauranteService.getRestaurante(id).subscribe(
+      this._restauranteService.getRestaurante(id).subscribe(
         response => {
           this.restaurante = response.data;
           this.status = response.status;
 
           if (this.status !== "success") {
             alert("web no encontrada");
-            this._router.navigate(['Home']);
+            this._router.navigate(['/']);
           }
 
         },
@@ -81,13 +78,13 @@ export class RestauranteEditComponent implements OnInit{
           }
         }
       );
+    });
   }
 
   callPrecio(value){
     this.restaurante.precio = value;
   }
 
-      public resultUpload;
 
   fileChangeEvent(fileInput: any) {
         this.filesToUpload = <Array<File>>fileInput.target.files;

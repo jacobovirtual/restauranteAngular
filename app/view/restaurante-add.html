@@ -15,10 +15,10 @@
   </p>
   <label>Precio:</label>
   <p>
-    <select (change)="callPrecio(precio.value)" #precio name='precio'>
-      <option value="bajo">Bajo</option>
-      <option value="medio">Medio</option>
-      <option value="alto">Alto</option>
+    <select (change)="callPrecio(precio.value)" #precio name="precio">
+      <option value="bajo" [attr.selected]="restaurante.precio === 'bajo' ? 'selected' : null">Bajo</option>
+      <option value="medio" [attr.selected]="restaurante.precio === 'medio' ? 'selected' : null">Medio</option>
+      <option value="alto" [attr.selected]="restaurante.precio === 'alto' ? 'selected' : null">Alto</option>
     </select>
   </p>
   <label>Imagen:</label>

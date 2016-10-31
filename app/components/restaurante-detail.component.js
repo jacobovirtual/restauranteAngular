@@ -10,13 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 // Importar el núcleo de Angular
 var core_1 = require('@angular/core');
-var router_deprecated_1 = require('angul@angularar2/router-deprecated');
+var router_1 = require('@angular/router');
 var restaurante_service_1 = require('../services/restaurante.service');
 // Decorador component, indicamos en que etiqueta se va a cargar la plantilla
 var RestauranteDetailComponent = (function () {
-    function RestauranteDetailComponent(_restauranteService, _routeParams, _router) {
+    function RestauranteDetailComponent(_restauranteService, _route, _router) {
         this._restauranteService = _restauranteService;
-        this._routeParams = _routeParams;
+        this._route = _route;
         this._router = _router;
         this.titulo = "Restaurante detau";
     }
@@ -26,21 +26,23 @@ var RestauranteDetailComponent = (function () {
     };
     RestauranteDetailComponent.prototype.getRestaurante = function () {
         var _this = this;
-        var id = this._routeParams.get("id");
-        var random = this._routeParams.get("random");
-        this._restauranteService.getRestaurante(id, random).subscribe(function (response) {
-            _this.restaurante = response.data;
-            _this.status = response.status;
-            if (_this.status !== "success") {
-                alert("web no encontrada");
-                _this._router.navigate(['Home']);
-            }
-        }, function (error) {
-            _this.errorMessage = error;
-            if (_this.errorMessage !== null) {
-                console.log(_this.errorMessage);
-                alert("Error en la peticion");
-            }
+        this._route.params.forEach(function (params) {
+            var id = params["id"];
+            var random = params["random"];
+            _this._restauranteService.getRestaurante(id, random).subscribe(function (response) {
+                _this.restaurante = response.data;
+                _this.status = response.status;
+                if (_this.status !== "success") {
+                    alert("web no encontrada");
+                    _this._router.navigate(['Home']);
+                }
+            }, function (error) {
+                _this.errorMessage = error;
+                if (_this.errorMessage !== null) {
+                    console.log(_this.errorMessage);
+                    alert("Error en la peticion");
+                }
+            });
         });
     };
     RestauranteDetailComponent = __decorate([
@@ -49,10 +51,9 @@ var RestauranteDetailComponent = (function () {
             templateUrl: "/app/view/restaurante-detail.html",
             providers: [restaurante_service_1.RestauranteService]
         }), 
-        __metadata('design:paramtypes', [restaurante_service_1.RestauranteService, (typeof (_a = typeof router_deprecated_1.RouteParams !== 'undefined' && router_deprecated_1.RouteParams) === 'function' && _a) || Object, (typeof (_b = typeof router_deprecated_1.Router !== 'undefined' && router_deprecated_1.Router) === 'function' && _b) || Object])
+        __metadata('design:paramtypes', [restaurante_service_1.RestauranteService, router_1.ActivatedRoute, router_1.Router])
     ], RestauranteDetailComponent);
     return RestauranteDetailComponent;
-    var _a, _b;
 }());
 exports.RestauranteDetailComponent = RestauranteDetailComponent;
 //# sourceMappingURL=restaurante-detail.component.js.map

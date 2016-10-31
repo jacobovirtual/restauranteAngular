@@ -1,6 +1,7 @@
 // Importar el núcleo de Angular
 import {Component, OnInit} from '@angular/core';
-import {ROUTER_DIRECTIVES, RouteConfig, Router} from '@angular/router-deprecated';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+
 import {RestauranteService} from '../services/restaurante.service';
 import {Restaurante} from '../model/restaurante';
 
@@ -8,7 +9,6 @@ import {Restaurante} from '../model/restaurante';
 @Component({
     selector: 'restaurantes-list',
     templateUrl: "/app/view/restaurantes-list.html",
-    directives: [ROUTER_DIRECTIVES],
     providers: [RestauranteService]
 })
 
@@ -22,7 +22,11 @@ export class RestaurantesListComponent implements OnInit {
   public confirmado;
 
 
-  constructor(private _restauranteService: RestauranteService){}
+  constructor(
+    private _route: ActivatedRoute,
+    private _router: Router,
+    private _restauranteService: RestauranteService
+  ){}
 
   ngOnInit() {
     this.loading = 'show';

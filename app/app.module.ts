@@ -7,13 +7,13 @@ import { routing, appRoutingProviders } from './app.routing.ts';
 import { AppComponent } from './app.component';
 
 import {RestaurantesListComponent} from './components/restaurantes-list.component';
-import {RestauranteDetailComponent} from './components/restaurante-detail.componen$
+import {RestauranteDetailComponent} from './components/restaurante-detail.component';
 import {RestauranteAddComponent} from './components/restaurante-add.component';
 import {RestauranteEditComponent} from './components/restaurante-edit.component';
 
 @NgModule({
 	imports: 	[ BrowserModule, HttpModule, FormsModule, routing ],
-	declarations: 	[ 
+	declarations: 	[
 			  AppComponent,
 			  RestauranteListComponent,
 			  RestauranteDetailComponent,

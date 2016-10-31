@@ -1,6 +1,7 @@
 // Importar el núcleo de Angular
 import {Component, OnInit} from '@angular/core';
-import {Router,RouteParams} from '@angular/router-deprecated';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+
 import {RestauranteService} from '../services/restaurante.service';
 import {Restaurante} from '../model/restaurante';
 
@@ -22,21 +23,12 @@ export class RestauranteAddComponent implements OnInit{
 
   constructor(
     private _restauranteService: RestauranteService,
-    private _routeParams: RouteParams,
-    private _router: Router
+    private _route: ActivatedRoute,
+    private _router: Router,
   ){}
 
   ngOnInit(){
-    // console.log(this._routeParams);
-    this.restaurante = new Restaurante(
-      0,
-      this._routeParams.get("nombre"),
-      this._routeParams.get("direccion"),
-      this._routeParams.get("descripcion"),
-      'null',
-      'bajo'
-    );
-
+    this.restaurante = new Restaurante(0,"","","",'null','bajo');
   }
 
   onSubmit(){
@@ -56,7 +48,7 @@ export class RestauranteAddComponent implements OnInit{
         }
       }
     );
-    this._router.navigate(['Home']);
+    this._router.navigate(['/']);
   }
 
     callPrecio(value){
