@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule, JsonModule } from '@angular/http';
+import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-import { routing, appRoutingProviders } from './app.routing.ts';
+
+import { routing, appRoutingProviders } from './app.routings';
 
 import { AppComponent } from './app.component';
 
@@ -15,7 +16,7 @@ import {RestauranteEditComponent} from './components/restaurante-edit.component'
 	imports: 	[ BrowserModule, HttpModule, FormsModule, routing ],
 	declarations: 	[
 			  AppComponent,
-			  RestauranteListComponent,
+			  RestaurantesListComponent,
 			  RestauranteDetailComponent,
 			  RestauranteEditComponent,
 			  RestauranteAddComponent

@@ -12,8 +12,9 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var http_1 = require('@angular/http');
 var forms_1 = require('@angular/forms');
-var app_routing_ts_1 = require('./app.routing.ts');
+var app_routings_1 = require('./app.routings');
 var app_component_1 = require('./app.component');
+var restaurantes_list_component_1 = require('./components/restaurantes-list.component');
 var restaurante_detail_component_1 = require('./components/restaurante-detail.component');
 var restaurante_add_component_1 = require('./components/restaurante-add.component');
 var restaurante_edit_component_1 = require('./components/restaurante-edit.component');
@@ -22,15 +23,15 @@ var AppModule = (function () {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule, app_routing_ts_1.routing],
+            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule, app_routings_1.routing],
             declarations: [
                 app_component_1.AppComponent,
-                RestauranteListComponent,
+                restaurantes_list_component_1.RestaurantesListComponent,
                 restaurante_detail_component_1.RestauranteDetailComponent,
                 restaurante_edit_component_1.RestauranteEditComponent,
                 restaurante_add_component_1.RestauranteAddComponent
             ],
-            providers: [app_routing_ts_1.appRoutingProviders],
+            providers: [app_routings_1.appRoutingProviders],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

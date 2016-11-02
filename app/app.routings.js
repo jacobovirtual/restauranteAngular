@@ -11,7 +11,7 @@ var appRoutes = [
         redirectTo: '/',
         pathMatch: 'full',
     },
-    { path: '/', component: restaurantes_list_component_1.RestaurantesListComponent, useAsDefault: true },
+    { path: '', component: restaurantes_list_component_1.RestaurantesListComponent },
     { path: 'restaurante/:id', component: restaurante_detail_component_1.RestauranteDetailComponent },
     { path: 'crear-restaurante', component: restaurante_add_component_1.RestauranteAddComponent },
     { path: 'editar-restaurante/:id', component: restaurante_edit_component_1.RestauranteEditComponent },

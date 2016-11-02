@@ -21,7 +21,11 @@ var RestauranteDetailComponent = (function () {
         this.titulo = "Restaurante detau";
     }
     RestauranteDetailComponent.prototype.ngOnInit = function () {
-        this.parametro = this._routeParams.get("id");
+        var _this = this;
+        this._route.params.forEach(function (params) {
+            var id = params["id"];
+            _this.parametro = id;
+        });
         this.getRestaurante();
     };
     RestauranteDetailComponent.prototype.getRestaurante = function () {

@@ -2,16 +2,16 @@
 <form #formRestaurante="ngForm" (ngSubmit)="onSubmit()">
   <label>Nombre:</label>
   <p>
-    <input type="text" #nombre="ngForm" name="nombre" [(ngModel)]="restaurante.nombre" required/>
+    <input type="text" #nombre="ngModel" name="nombre" [(ngModel)]="restaurante.nombre" required/>
     <span *ngIf="!nombre.valid">Rellena este campo</span>
   </p>
   <label>Direccion:</label>
   <p>
-    <input type="text" #direccion="ngForm" name="direccion" [(ngModel)]="restaurante.direccion" />
+    <input type="text" #direccion="ngModel" name="direccion" [(ngModel)]="restaurante.direccion" />
   </p>
   <label>Descripcion:</label>
   <p>
-    <input type="textarea" #descripcion="ngForm" name="descripcion" [(ngModel)]="restaurante.descripcion" />
+    <input type="textarea" #descripcion="ngModel" name="descripcion" [(ngModel)]="restaurante.descripcion" />
   </p>
   <label>Precio:</label>
   <p>

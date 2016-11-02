@@ -27,8 +27,11 @@ export class RestauranteDetailComponent implements OnInit{
   ){}
 
   ngOnInit(){
-    this.parametro = this._routeParams.get("id");
-      this.getRestaurante();
+    this._route.params.forEach((params: Params) => {
+      let id = params["id"];
+    	this.parametro = id;
+    });
+    this.getRestaurante();
   }
 
   getRestaurante(){

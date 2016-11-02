@@ -1,7 +1,7 @@
 // Importar el núcleo de Angular
 
 import { ModuleWithProviders } from '@angular/core';
-import { RouterModule, Routers } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import {RestaurantesListComponent} from './components/restaurantes-list.component';
 import {RestauranteDetailComponent} from './components/restaurante-detail.component';
@@ -14,7 +14,7 @@ const appRoutes: Routes = [
 		redirectTo: '/',
 		pathMatch: 'full',
 		},
-	{path:'/', component: RestaurantesListComponent, useAsDefault: true},
+	{path:'', component: RestaurantesListComponent},
 	{path:'restaurante/:id', component: RestauranteDetailComponent},
 	{path:'crear-restaurante', component: RestauranteAddComponent},
 	{path:'editar-restaurante/:id', component: RestauranteEditComponent},
